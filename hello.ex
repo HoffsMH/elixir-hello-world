@@ -28,6 +28,47 @@ IO.inspect('whaat');
 IO.puts(List.first('hello')); # this will work
 # IO.puts(List.first("hello")); # this will not
 
+# IO.puts(to_string(:crypto.strong_rand_bytes(3)))
+# this will error half the time because not all bytes are valid characters
+
+
+IO.puts(2/1)
+IO.puts(3/1.5)
+
+
+# An important feature of Elixir is that any two types can be compared;
+# this is particularly useful in sorting.
+# We don’t need to memorize the sort order, but it is important to be aware of it:
+#
+# number < atom < reference < function < port < pid < tuple < map < list < bitstring
+
+IO.puts(:hello > 999)
+IO.puts({:hello, :world} > [1, 2, 3])
+
+name = "Sean"
+IO.puts("Hello #{name}");
+
+
+a = [3.14, :pie, "Apple"];
+# IO.puts(a);
+# IO.inspect(a);
+# no easy convient way to output a list
+
+[foo: "bar", hello: "world"]
+
+key = "hello"
+stuff = %{key => "world"}
+
+%{stuff | foo: "baz"}
+
+IO.puts(stuff["hello"])
+IO.puts(stuff[:foo]) # nothing
+
 # Ha looks like not even the mighty elixir can escape this issue
 IO.puts(x);
 IO.inspect(MyModule.MyApp)
+
+
+Enum.__info__(:functions) |> Enum.each(fn({function, arity}) ->
+   IO.puts "#{function}/#{arity}"
+ end)
