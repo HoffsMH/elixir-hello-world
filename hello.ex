@@ -72,3 +72,29 @@ IO.inspect(MyModule.MyApp)
 Enum.__info__(:functions) |> Enum.each(fn({function, arity}) ->
    IO.puts "#{function}/#{arity}"
  end)
+
+
+
+
+
+
+IO.puts("----------------------------------------------")
+user = %{first: "Sean", last: "Callan"}
+
+output = with \
+  {:ok, first} <- Map.fetch(user, :first), # do something and with the result of the expression
+  {:ok, last} <- Map.fetch(user, :last),
+  do: last <> ", " <> first;
+
+IO.puts(output)
+
+
+
+#  algebra huh?
+
+y = 4
+
+# y = (g) + 1 # wont work isn't really that algebraic
+
+# IO.puts('---------------------------------------------------')
+# IO.puts(g);
