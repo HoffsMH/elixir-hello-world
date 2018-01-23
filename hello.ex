@@ -6,10 +6,6 @@
 
 x = 0.1 + 0.2
 
-IO.puts("whaat");
-IO.puts("whaat");
-IO.puts("whaat");
-IO.puts('whaat');
 # why does the doc indicate that only double quotes will work
 IO.puts('dziękuję')
 
@@ -98,3 +94,12 @@ y = 4
 
 # IO.puts('---------------------------------------------------')
 # IO.puts(g);
+
+
+pinned1 = 4
+
+{^pinned, a} = { 4, 25 }
+
+# this alone could introduce alot of complexity
+
+IO.puts(a);
